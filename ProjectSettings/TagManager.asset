@@ -3,17 +3,33 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Gun
+  - WayPoints
+  - GunShot
+  - Music
+  - EnemySpawner
+  - StartPos
+  - House1
+  - House2
+  - House3
+  - House4
+  - GasStation
+  - Store
+  - Shoulder
+  - Stats
+  - Backpack
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
-  - 
+  - UI2
+  - MouseTarget
+  - Enemy
   - 
   - 
   - 

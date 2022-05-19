@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class AnimationStateController : MonoBehaviour
 {
-    Animator anim;
-    int isWalkingHash;
-    int isRunningHash;
-    int isWalkingBackHash;
-    int isRunningBackHash;
+    private Animator anim;
+    private int isWalkingHash;
+    private int isRunningHash;
+    private int isWalkingBackHash;
+    private int isRunningBackHash;
+
+
 
     void Start()
     {
         anim = GetComponent<Animator>();
-
         isWalkingHash = Animator.StringToHash("isWalking");
         isRunningHash = Animator.StringToHash("isRunning");
         isWalkingBackHash = Animator.StringToHash("isWalkingBack");
@@ -24,9 +25,9 @@ public class AnimationStateController : MonoBehaviour
     void Update()
     {
         bool runPressed = Input.GetKey("left shift");
-
         bool isWalking = anim.GetBool(isWalkingHash);
         bool isRunning = anim.GetBool(isRunningHash);
+
         bool forwardPressed = Input.GetKey("d");
 
         bool isWalkingBack = anim.GetBool(isWalkingBackHash);
