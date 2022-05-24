@@ -10,6 +10,19 @@ public class SceneLoader : MonoBehaviour
     private Backpack backpack;
     private Stats stat;
 
+    private GameObject other;
+    //[SerializeField] private GameObject house1Spawn;
+    //[SerializeField] private GameObject house2Spawn;
+    //[SerializeField] private GameObject house3Spawn;
+    //[SerializeField] private GameObject house4Spawn;
+    //[SerializeField] private GameObject gasStationSpawn;
+    //[SerializeField] private GameObject superMarketSpawn;
+
+    private void Start()
+    {
+        other = GameObject.FindGameObjectWithTag("Player");
+    }
+
     public void NewGame()
     {
         string path = Application.persistentDataPath + "/stats.data";
@@ -40,7 +53,37 @@ public class SceneLoader : MonoBehaviour
             stat.SaveStats();
         }
 
-        SceneManager.LoadScene(scenename);
+        //if (SceneManager.GetActiveScene().name == "House1")
+        //{
+        //    SceneManager.LoadScene(scenename);
+        //    other.transform.position = house1Spawn.transform.position;
+        //}
+        //else if (SceneManager.GetActiveScene().name == "House2")
+        //{
+        //    SceneManager.LoadScene(scenename);
+        //    other.transform.position = house2Spawn.transform.position;
+        //}
+        //else if (SceneManager.GetActiveScene().name == "House3")
+        //{
+        //    SceneManager.LoadScene(scenename);
+        //    other.transform.position = house3Spawn.transform.position;
+        //}
+        //else if (SceneManager.GetActiveScene().name == "House4")
+        //{
+        //    SceneManager.LoadScene(scenename);
+        //    other.transform.position = house4Spawn.transform.position;
+        //}
+        //else if (SceneManager.GetActiveScene().name == "GasStation")
+        //{
+        //    SceneManager.LoadScene(scenename);
+        //    other.transform.position = gasStationSpawn.transform.position;
+        //}
+        //else if (SceneManager.GetActiveScene().name == "SuperMarket")
+        //{
+        //    SceneManager.LoadScene(scenename);
+        //    other.transform.position = superMarketSpawn.transform.position;
+        //}
+
     }
     public void LoadMainMenu()
     {
@@ -81,15 +124,6 @@ public class SceneLoader : MonoBehaviour
         }
         //Cursor.SetCursor(Crosshair,Vector2.zero,CursorMode.ForceSoftware);
     }
-    public void DeleteSave()
-    {
-        string path = Application.persistentDataPath + "/stats.data";
-        if (File.Exists(path))
-        {
-            File.Delete(path);
-        }
-    }
-
 
     //Load options menu
     public void LoadOptions()

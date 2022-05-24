@@ -95,7 +95,6 @@ namespace Loot
                 avoidWrongNumbers();
                 backpack.SaveState();
                 startLooting();
-                avoidWrongNumbers();
                 backpack.SaveState();
 
                 triggerLight.enabled = false;
@@ -122,6 +121,7 @@ namespace Loot
                 }
             }
             isLooted = true;
+            avoidWrongNumbers();
             updateValues();
         }
 
@@ -166,7 +166,11 @@ namespace Loot
             {
                 if (item.name == "scrap")
                 {
-                    item.quantity = backpack.scrapMetal;
+                    if(item.quantity < backpack.scrapMetal)
+                    {
+                        item.quantity = backpack.scrapMetal;
+                    }
+
                     if(item.quantity > backpack.scrapMax)
                     {
                         item.quantity = backpack.scrapMax;
@@ -174,7 +178,11 @@ namespace Loot
                 }
                 else if (item.name == "plank")
                 {
-                    item.quantity = backpack.wood;
+                    if (item.quantity < backpack.wood)
+                    {
+                        item.quantity = backpack.wood;
+                    }
+                    
                     if (item.quantity > backpack.woodMax)
                     {
                         item.quantity = backpack.woodMax;
@@ -182,7 +190,11 @@ namespace Loot
                 }
                 else if (item.name == "cloth")
                 {
-                    item.quantity = backpack.cloth;
+                    if (item.quantity < backpack.cloth)
+                    {
+                        item.quantity = backpack.cloth;
+                    }
+                    
                     if (item.quantity > backpack.clothMax)
                     {
                         item.quantity = backpack.clothMax;
@@ -190,7 +202,11 @@ namespace Loot
                 }
                 else if (item.name == "water")
                 {
-                    item.quantity = backpack.water;
+                    if (item.quantity < backpack.water)
+                    {
+                        item.quantity = backpack.water;
+                    }
+                    
                     if (item.quantity > backpack.waterMax)
                     {
                         item.quantity = backpack.waterMax;
@@ -198,7 +214,11 @@ namespace Loot
                 }
                 else if (item.name == "food")
                 {
-                    item.quantity = backpack.food;
+                    if (item.quantity < backpack.food)
+                    {
+                        item.quantity = backpack.food;
+                    }
+                    
                     if (item.quantity > backpack.foodMax)
                     {
                         item.quantity = backpack.foodMax;
